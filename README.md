@@ -3,17 +3,13 @@
 
 Como usar?
 
-instale a biblioteca com o comando abaixo.
+# instale a biblioteca com o comando abaixo.
 
-´´´shell
-    npm i fetchyt
-´´´
+npm i fetchyt
 
-Após a instalação...
+# Após a instalação...
 
-´´´js
-
-//Importe o pacote para o seu projeto.
+# Importe o pacote para o seu projeto.
 
 const fetchyt = require("fetchyt")
 
@@ -21,32 +17,29 @@ a biblioteca retorna uma função que é uma promise, então para ser executada 
 
 const fetchMusics = async() => {
 
-    //Você manda a lista de músicas através de um array e mesmo se for uma única música, seu nome deve ser mandando em um array.
+  Você manda a lista de músicas através de um array e mesmo se for uma única música, seu nome deve ser mandando em um array.
 
-    const musics = ["Paradise city", "Back in black"]
+  const musics = ["Paradise city", "Back in black"]
 
-    //Utilize o await para que a função espere a busca finalizar para retornar o resultado.
+  Utilize o await para que a função espere a busca finalizar para retornar o resultado.
 
-    const results = await fetchyt(musics)
+  const results = await fetchyt(musics)
 
-    //após isso você pode dar um console.log() no resultado para mostrar todos os links
+  após isso você pode dar um console.log() no resultado para mostrar todos os links
 
-    console.log(results)
+  console.log(results)
 
 }
 
 fetchMusics()
-´´´
 
-´´´js
 
-//O resultado do retorno é um objeto contendo o nome da música como "key", e seu valor é seu link do youtube.
+# O resultado do retorno é um objeto contendo o nome da música como "key", e seu valor é seu link do youtube.
 
 {
   paradisecity: 'https://www.youtube.com/watch?v=o6BiIh6orig',
   backinblack: 'https://www.youtube.com/watch?v=KjJe1rBdm9U'
 }
 
-´´´
 
 
