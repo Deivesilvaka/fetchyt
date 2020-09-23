@@ -12,14 +12,29 @@ async function robot(spotifyURL) {
 
     const withouInitialUrl = spotifyURL.replace("https://open.spotify.com/playlist/", "")
 
-    const withoutStringDeforeInterrogation = withouInitialUrl.substring(withouInitialUrl.indexOf("?"), -withouInitialUrl.length)
+    const withoutStringDeforeInterrogation = await removeJunks(withouInitialUrl)
 
-    
     const musics = await fetchSpotify(withoutStringDeforeInterrogation)
 
     const allMusics = await returnAllMusics(musics)
 
     return allMusics
+
+
+    //const musics = await fetchSpotify(withoutStringDeforeInterrogation)
+
+    //const allMusics = await returnAllMusics(musics)
+
+    //return allMusics
+
+    async function removeJunks(withouInitialUrl) {
+        if(withouInitialUrl.includes("?")){
+            return withouInitialUrl.substring(withouInitialUrl.indexOf("?"), -withouInitialUrl.length)
+        }else{
+            return withouInitialUrl
+        }
+        //
+    }
 
     async function returnAllMusics(musicsOBJ) {
         return musicsOBJ.map(item => item.track.name + " " + item.track.artists[0].name)
