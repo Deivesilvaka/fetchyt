@@ -61,3 +61,23 @@ const init = async() => {
 init()
 
 como o resultado retornado da "spotifypl" é um array, podemos utilizar seu retorno na função "fetchyt" para trazer o link das músicas depois.
+
+# download de videos
+
+a função "downloader" faz o download dos videos retornados da funçãon "fetchyt", ela pede dois parametros cujo o primeiro é o objeto retornado com os links das musicas e o segundo é um objeto indicando onde o video será salvo
+
+const { downloader } = require("fetchyt")
+
+const init = async() => {
+
+  const musicsObj = {...}
+
+  await downloader(musicsObj, {
+      path:`${__dirname}/videos`
+  })
+   
+}
+
+init()
+
+no final os vídeos ficarão salvos na pasta que você selecionou
