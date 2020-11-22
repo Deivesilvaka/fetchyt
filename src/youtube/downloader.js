@@ -30,6 +30,7 @@ async function robot(object, config) {
         return new Promise(async (resolve, reject) => {
             await ytdl(music)
             .pipe(fs.createWriteStream(`${Config.path}${name}.mp4`))
+            
             resolve("success")
         })
     }
