@@ -21,7 +21,6 @@ async function robot(object, config) {
 
    async function fetchObject(object){
         for(const music in object){
-            //await download(object[music].href.replace("https://www.youtube.com/watch?v=", ""), music)
             await download(object[music].href, music)
         }
    }
@@ -31,7 +30,6 @@ async function robot(object, config) {
         return new Promise(async (resolve, reject) => {
             await ytdl(music)
             .pipe(fs.createWriteStream(`${Config.path}${name}.mp4`))
-
             resolve("success")
         })
     }
