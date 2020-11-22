@@ -21,10 +21,8 @@ async function robot(object, config) {
 
    async function fetchObject(object){
         for(const music in object){
-            console.log("pesquisando sobre " + music)
-            //await download(object[music].replace("https://www.youtube.com/watch?v=", ""))
-            await download(object[music], music)
-
+            //await download(object[music].href.replace("https://www.youtube.com/watch?v=", ""), music)
+            await download(object[music].href, music)
         }
    }
 

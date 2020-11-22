@@ -2,7 +2,7 @@
 
 const puppeteer = require("puppeteer")
 
-async function robot(musics) {
+async function robot(musics, type = "") {
 
     const JSONLinks = {}
 
@@ -20,23 +20,35 @@ async function robot(musics) {
     async function fetchMusicsOnYoutube(music) {
         const browser = await puppeteer.launch({headless:true})
         const page = await browser.newPage()
-        await page.goto(`https://www.youtube.com/results?search_query=${music} lyrics`)
+        await page.goto(`https://www.youtube.com/results?search_query=${music} ${type}`)
 
         const videos = await page.evaluate(async() => {
+
             const elements = document.querySelectorAll(".ytd-thumbnail")
+            const thumbnails = document.querySelectorAll(".yt-img-shadow")
+
+            //document.querySelectorAll(".yt-img-shadow")
             
             const array = [...elements]
+            const arrayThumb = [...thumbnails]
 
             const links = array.map(({href}) => ({
                 href
             }))
 
-            return links
+            const thumbLink = arrayThumb.map(({src}) => ({
+                src
+            }))
+
+            return {
+                links,
+                thumbLink
+            }
         })
 
         await browser.close()
 
-        const links = videos.filter((item) => {
+        const links = videos.links.filter((item) => {
             if(item.href){
                 return true
             }
@@ -44,7 +56,19 @@ async function robot(musics) {
             return false
         })
 
-        return links[0].href
+        const thumbs = videos.thumbLink.filter((item) => {
+            if(item.src){
+                return true
+            }
+
+            return false
+        })
+
+        return {
+            href: links[0].href,
+            thumbnail: thumbs[0].src
+        }
+
     }
 
 }

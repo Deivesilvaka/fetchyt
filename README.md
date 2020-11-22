@@ -25,6 +25,18 @@ const fetchMusics = async() => {
 
   const results = await fetchyt(musics)
 
+  você também pode colocar um segundo parâmetro na função para definir que tipo de pesquisa você quer por exemplo...
+
+  const results = await fetchyt(musics, "clipe")
+  ou
+  const results = await fetchyt(musics, "cover")
+  ou até mesmo
+  const results = await fetchyt(musics, "letra")
+
+  vai do seu desejo.
+
+  você pode fazer todo o tipo de pesquisa que quiser no youtube.
+
   após isso você pode dar um console.log() no resultado para mostrar todos os links
 
   console.log(results)
@@ -34,11 +46,17 @@ const fetchMusics = async() => {
 fetchMusics()
 
 
-# O resultado do retorno é um objeto contendo o nome da música como "key", e seu valor é seu link do youtube.
+# O resultado do retorno é um objeto contendo o nome da música como "key", e seu valor é um objeto contendo seu link do youtube e sua thumbnail.
 
 {
-  paradisecity: 'https://www.youtube.com/watch?v=o6BiIh6orig',
-  backinblack: 'https://www.youtube.com/watch?v=KjJe1rBdm9U'
+  paradisecity: {
+    href: 'https://www.youtube.com/watch?v=Rbm6GXllBiw',
+    thumbnail: 'https://i.ytimg.com/vi/Rbm6GXllBiw/hq720.jpg?sqp=-oaymwEZCOgCEMoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLC_0GYGuam1Tt2tYUFOD8lmX6cSwQ'
+  },
+  backinblack: {
+    href: 'https://www.youtube.com/watch?v=pAgnJDJN4VA',
+    thumbnail: 'https://i.ytimg.com/vi/pAgnJDJN4VA/hq720.jpg?sqp=-oaymwEZCOgCEMoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLBfP7lIrs8HvDd4ePMs2t8VspxMvw'
+  }
 }
 
 # Também é possível realizar um scrapping pelo spotify.
