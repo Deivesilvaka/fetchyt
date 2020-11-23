@@ -46,16 +46,18 @@ const fetchMusics = async() => {
 fetchMusics()
 
 
-# O resultado do retorno é um objeto contendo o nome da música como "key", e seu valor é um objeto contendo seu link do youtube e sua thumbnail.
+# O resultado do retorno é um objeto contendo o nome da música como "key", e seu valor é um objeto contendo seu link do youtube, sua thumbnail e o titulo do vídeo no youtube.
 
 {
   paradisecity: {
     href: 'https://www.youtube.com/watch?v=Rbm6GXllBiw',
-    thumbnail: 'https://i.ytimg.com/vi/Rbm6GXllBiw/hq720.jpg?sqp=-oaymwEZCOgCEMoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLC_0GYGuam1Tt2tYUFOD8lmX6cSwQ'
+    thumbnail: 'https://i.ytimg.com/vi/Rbm6GXllBiw/hq720.jpg?sqp=-oaymwEZCOgCEMoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLC_0GYGuam1Tt2tYUFOD8lmX6cSwQ',
+    title: "Guns N' Roses - Paradise City"
   },
   backinblack: {
     href: 'https://www.youtube.com/watch?v=pAgnJDJN4VA',
-    thumbnail: 'https://i.ytimg.com/vi/pAgnJDJN4VA/hq720.jpg?sqp=-oaymwEZCOgCEMoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLBfP7lIrs8HvDd4ePMs2t8VspxMvw'
+    thumbnail: 'https://i.ytimg.com/vi/pAgnJDJN4VA/hq720.jpg?sqp=-oaymwEZCOgCEMoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLBfP7lIrs8HvDd4ePMs2t8VspxMvw',
+    title: 'AC/DC - Back In Black (Official Video)'
   }
 }
 
@@ -82,7 +84,7 @@ como o resultado retornado da "spotifypl" é um array, podemos utilizar seu reto
 
 # download de videos
 
-a função "downloader" faz o download dos videos retornados da funçãon "fetchyt", ela pede dois parametros cujo o primeiro é o objeto retornado com os links das musicas e o segundo é um objeto indicando onde o video será salvo
+a função "downloader" faz o download dos videos retornados da função "fetchyt", ela pede dois parametros cujo o primeiro é o objeto retornado com os dados dos videos e o segundo é um objeto indicando onde o video será salvo.
 
 const { downloader } = require("fetchyt")
 

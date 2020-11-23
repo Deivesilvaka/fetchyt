@@ -8,7 +8,7 @@ async function robot(object, config) {
     let Config = {}
 
     if(!config){
-        Config.path = `${__dirname}/videos/`
+        Config.path = `${__dirname}/videos`
     }else{
         if(config.path.substr(-1) === "/"){
             Config = config    
@@ -21,7 +21,7 @@ async function robot(object, config) {
 
    async function fetchObject(object){
         for(const music in object){
-            await download(object[music].href, music)
+            await download(object[music].href, object[music].title)
         }
    }
 

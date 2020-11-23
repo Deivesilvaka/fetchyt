@@ -24,13 +24,22 @@ async function robot(musics, type = "") {
 
         const videos = await page.evaluate(async() => {
 
+            const videoTitle = document.querySelectorAll("yt-formatted-string.ytd-video-renderer")
             const elements = document.querySelectorAll(".ytd-thumbnail")
             const thumbnails = document.querySelectorAll(".yt-img-shadow")
 
-            //document.querySelectorAll(".yt-img-shadow")
+            //document.querySelectorAll(".ytd-video-renderer")
+
+            //yt-formatted-string.ytd-video-renderer
             
+            const titlesArray = [...videoTitle]
             const array = [...elements]
             const arrayThumb = [...thumbnails]
+
+
+            const title = titlesArray.map(({innerText}) => ({
+                innerText
+            }))
 
             const links = array.map(({href}) => ({
                 href
@@ -42,7 +51,8 @@ async function robot(musics, type = "") {
 
             return {
                 links,
-                thumbLink
+                thumbLink,
+                title
             }
         })
 
@@ -64,9 +74,18 @@ async function robot(musics, type = "") {
             return false
         })
 
+        const allTitles = videos.title.filter((item) => {
+            if(item.innerText){
+                return true
+            }
+
+            return false
+        })
+
         return {
             href: links[0].href,
-            thumbnail: thumbs[0].src
+            thumbnail: thumbs[0].src,
+            title:allTitles[0].innerText
         }
 
     }

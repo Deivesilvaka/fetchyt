@@ -1,6 +1,6 @@
 {
   "name": "fetchyt",
-  "version": "2.3.5",
+  "version": "2.3.8",
   "description": "Search musics on youtube and return your links",
   "main": "index.js",
   "scripts": {
