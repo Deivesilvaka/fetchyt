@@ -1,6 +1,6 @@
 {
   "name": "fetchyt",
-  "version": "2.3.8",
+  "version": "2.4.0",
   "description": "Search musics on youtube and return your links",
   "main": "index.js",
   "scripts": {
@@ -13,6 +13,8 @@
   "keywords": [
     "youtube",
     "spotify",
+    "webcrawler",
+    "webscrapping",
     "download",
     "fetch",
     "headless"
@@ -23,6 +25,7 @@
     "btoa": "^1.2.1",
     "node-fetch": "^2.6.1",
     "puppeteer": "^5.5.0",
+    "puppeteer-cluster": "^0.22.0",
     "spotify-web-api-node": "^4.0.0",
     "ytdl-core": "^3.4.2"
   }

@@ -15,6 +15,8 @@ const {fetchyt} = require("fetchyt")
 
 a biblioteca retorna uma função que é uma promise, então para ser executada precisa ser em uma função assíncrona.
 
+caso você precise buscar por muitos vídeos, você pode utilizar a função "cluster" ao invés da fetchyt
+
 const fetchMusics = async() => {
 
   Você manda a lista de músicas através de um array e mesmo se for uma única música, seu nome deve ser mandando em um array.
