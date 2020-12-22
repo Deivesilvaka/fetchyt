@@ -88,7 +88,7 @@ como o resultado retornado da "spotifypl" é um array, podemos utilizar seu reto
 
 a função "downloader" faz o download dos videos retornados da função "fetchyt", ela pede dois parametros cujo o primeiro é o objeto retornado com os dados dos videos e o segundo é um objeto indicando onde o video será salvo.
 
-const { downloader } = require("fetchyt")
+const { downloader } = require("fetchyt") //função em manutenção :(
 
 const init = async() => {
 

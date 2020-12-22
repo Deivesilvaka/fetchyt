@@ -8,6 +8,6 @@ const downloader = require("./src/youtube/downloader")
 module.exports = {
     fetchyt,
     spotifypl,
-    downloader,
+    //downloader,
     cluster
 }
