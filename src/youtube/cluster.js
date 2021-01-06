@@ -6,7 +6,8 @@ async function robot(musics, type = "") {
 
     const cluster = await Cluster.launch({
         concurrency:Cluster.CONCURRENCY_CONTEXT,
-        maxConcurrency:10
+        maxConcurrency:10,
+        puppeteerOptions: { args: ['--no-sandbox'] }
     })
 
     await cluster.task(fetchMusicsOnYoutube)
