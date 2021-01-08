@@ -103,3 +103,21 @@ const init = async() => {
 init()
 
 no final os vídeos ficarão salvos na pasta que você selecionou
+
+# yts
+
+const { yts } = require("fetchyt")
+
+async function init() {
+
+    const conteudo = await yts("yung lixo polaroid")
+
+    console.log(conteudo)
+   
+}
+
+init()
+
+o resultado disso é um objeto contendo vaios conteudos do youtube entre eles, lives, playlists, videos e etc.
+
+por favor, se possível, leia o código desta função.
