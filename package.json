@@ -1,6 +1,6 @@
 {
   "name": "fetchyt",
-  "version": "2.4.3",
+  "version": "3.0.0",
   "description": "Search musics on youtube and return your links",
   "main": "index.js",
   "scripts": {
@@ -27,6 +27,7 @@
     "puppeteer": "^5.5.0",
     "puppeteer-cluster": "^0.22.0",
     "spotify-web-api-node": "^4.0.0",
+    "yt-search": "^2.5.1",
     "ytdl-core": "^3.4.2"
   }
 }
