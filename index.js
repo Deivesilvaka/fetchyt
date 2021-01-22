@@ -9,7 +9,7 @@ const yts = require("./src/youtube/yts")
 module.exports = {
     fetchyt,
     spotifypl,
-    //downloader,
+    downloader,
     cluster,
     yts
 }
